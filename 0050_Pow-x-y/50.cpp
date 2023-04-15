@@ -1,4 +1,4 @@
-#include <iostream>>
+#include <iostream>
 #include <stdlib.h>
 
 using namespace std;
@@ -17,3 +17,10 @@ public:
         return n > 0 ? answer : 1 / answer;
     }
 };
+
+int main() {
+    Solution s = Solution();
+    auto pow = s.myPow(2, 10);
+    cout << pow << endl;
+    return 0;
+}

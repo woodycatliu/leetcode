@@ -52,3 +52,18 @@ public:
     }
 
 };
+
+int main() {
+    cout << "hello" << endl;
+    Solution s = Solution();
+    vector<int> v = { -1, 0, 1 , 2, -1, -4 };
+    auto vec = s.threeSum(v);
+
+    for (auto i : vec ) {
+        for (auto j : i ){
+            cout << j << endl;
+        }
+    }
+
+    return 0;
+}
