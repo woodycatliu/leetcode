@@ -1,39 +1,50 @@
 #include <iostream>
 #include <vector>
+#include "overload/ostreamExt.h"
 
 using namespace std;
-typedef vector<vector<int> > Res;
 
-class Solution {
+typedef vector<vector<int>> Res;
+
+class Solution
+{
 public:
-    vector<vector<int> > threeSum(vector<int>& nums) {
+    vector<vector<int>> threeSum(vector<int> &nums)
+    {
         int size = nums.size() - 1;
         Res res;
-        if (size < 2) { return res; }
+        if (size < 2)
+        {
+            return res;
+        }
 
         sort(nums.begin(), nums.end());
 
-        for (int i = 0; i<size - 1; i++) {
+        for (int i = 0; i < size - 1; i++)
+        {
             cout << i << endl;
-            if (i > 0 && nums[i] == nums[i - 1]) {
+            if (i > 0 && nums[i] == nums[i - 1])
+            {
                 continue;
             }
             twoSum(nums, i + 1, size, -nums[i], res);
         }
 
-        return  res;
+        return res;
     }
 
-    void twoSum(vector<int>& nums, int left, int right, int tar, Res &res) {
+    void twoSum(vector<int> &nums, int left, int right, int tar, Res &res)
+    {
         while (left < right)
         {
-            if (nums[left] + nums[right] == tar) {
-                vector<int> a = { -tar, nums[left], nums[right] };
+            if (nums[left] + nums[right] == tar)
+            {
+                vector<int> a = {-tar, nums[left], nums[right]};
 
                 res.push_back(a);
                 left += 1;
                 right -= 1;
-                while (left < right && nums[left - 1] == nums[left]) 
+                while (left < right && nums[left - 1] == nums[left])
                 {
                     left += 1;
                 }
@@ -42,28 +53,25 @@ public:
                 {
                     right -= 1;
                 }
-                
-            } else if (nums[left] + nums[right] < tar) {
+            }
+            else if (nums[left] + nums[right] < tar)
+            {
                 left += 1;
-            } else {
+            }
+            else
+            {
                 right -= 1;
             }
         }
     }
-
 };
 
-int main() {
-    cout << "hello" << endl;
+int main()
+{
     Solution s = Solution();
-    vector<int> v = { -1, 0, 1 , 2, -1, -4 };
+    vector<int> v = {-1, 0, 1, 2, -1, -4};
     auto vec = s.threeSum(v);
-
-    for (auto i : vec ) {
-        for (auto j : i ){
-            cout << j << endl;
-        }
-    }
-
+    // cout << vec << endl;
+    EXTTT::find();
     return 0;
 }

@@ -1,21 +1,27 @@
 #include <iostream>
 #include <vector>
+#include "../overload/ostream_ext.h"
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> plusOne(vector<int>& digits) {
+    vector<int> plusOne(vector<int> &digits)
+    {
         int index = digits.size() - 1;
 
         while (index >= 0 && digits[index] == 9)
         {
             digits[index--] = 0;
         }
-        
-        if (index >= 0) {
+
+        if (index >= 0)
+        {
             digits[index]++;
-        } else {
+        }
+        else
+        {
             digits.insert(digits.begin(), 1);
         }
 
@@ -23,14 +29,11 @@ public:
     }
 };
 
-int main() 
+int main()
 {
     vector<int> q = {9};
     Solution s = Solution();
     auto ans = s.plusOne(q);
-
-    for (int i : ans) {
-        cout << i << endl;
-    }
+    cout << ans << endl;
     return 0;
 }
