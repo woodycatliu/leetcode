@@ -14,16 +14,14 @@ public:
         int gs = g.size();
         int ss = s.size();
 
-        int l = 0;
         int r = 0;
 
         int res = 0;
-        while (l < gs && r < ss)
+        while (res < gs && r < ss)
         {
-            if (g[l] <= s[r])
+            if (g[res] <= s[r])
             {
                 res++;
-                l++;
             }
 
             r++;

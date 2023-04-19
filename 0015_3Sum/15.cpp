@@ -69,9 +69,9 @@ public:
 int main()
 {
     Solution s = Solution();
-    vector<int> v = {-1, 0, 1, 2, -1, -4};
+    vector<int> v = {1, 2, 2};
     auto vec = s.threeSum(v);
     // cout << vec << endl;
-    EXTTT::find();
     return 0;
 }
+S
